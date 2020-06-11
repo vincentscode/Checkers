@@ -1,0 +1,19 @@
+object CheckersForm: TCheckersForm
+  Left = 1069
+  Height = 800
+  Top = 149
+  Width = 800
+  Caption = 'Checkers'
+  OnCreate = FormCreate
+  OnPaint = boardPaintBoxPaint
+  LCLVersion = '2.0.4.0'
+  object GameActions: TActionList
+    left = 32
+    top = 16
+    object RestartAction: TAction
+      Caption = 'Restart'
+      OnExecute = RestartActionExecute
+      ShortCut = 116
+    end
+  end
+end
