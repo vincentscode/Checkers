@@ -116,17 +116,36 @@ end;
 
 procedure TCheckersForm.TokenOnMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  // Check if its the Players Turn
-  // TODO
+  if Button = mbLeft then begin
+    // Check if its the Players Turn
+    // TODO
 
-  // Save Mouse Location
-  MouseDownPos.X := X; 
-  MouseDownPos.Y := Y;
+    // Save Mouse Location
+    MouseDownPos.X := X;
+    MouseDownPos.Y := Y;
 
-  // Enable Dragging
-  DraggingEnabled := True;
+    // Enable Dragging
+    DraggingEnabled := True;
 
-  // Show Options
+    // Show Options
+  end else if Button = mbRight then begin
+    // Delete (DEBUG)
+    RemoveControl(TControl(Sender));
+  end else if Button = mbMiddle then begin
+    // Checker (DEBUG)
+    if TShape(Sender).Pen.Color = clRed then begin
+      if TShape(Sender).Brush.Color = clBlack then begin
+        TShape(Sender).Pen.Color:= clWhite;
+        TShape(Sender).Pen.Width:= 1;
+      end else begin
+        TShape(Sender).Pen.Color:= clBlack;
+        TShape(Sender).Pen.Width:= 1;
+      end;
+    end else begin
+      TShape(Sender).Pen.Color:= clRed;
+      TShape(Sender).Pen.Width:= 4;
+    end;
+  end;
 end;
 
 procedure TCheckersForm.TokenOnMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer);

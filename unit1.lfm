@@ -1,7 +1,7 @@
 object CheckersForm: TCheckersForm
-  Left = 1069
+  Left = 563
   Height = 800
-  Top = 149
+  Top = 118
   Width = 800
   Caption = 'Checkers'
   OnCreate = FormCreate

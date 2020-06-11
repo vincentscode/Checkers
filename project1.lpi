@@ -12,7 +12,6 @@
       <UseXPManifest Value="True"/>
       <XPManifest>
         <DpiAware Value="True"/>
-        <ExecutionLevel Value="requireAdministrator"/>
         <TextName Value="de.vincentscode.checkers"/>
         <TextDesc Value="A simple Checkers Application."/>
       </XPManifest>
